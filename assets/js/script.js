@@ -4,6 +4,7 @@ createApp({
     data(){
         return {
             currentImage: 0,
+            stopInterval: null,
 
             slides: [
                 {
@@ -57,9 +58,14 @@ createApp({
 
         },
         autoScroll(){
-            setInterval( () =>{
+            this.stopInterval= setInterval( () =>{
                 this.next()
             }, 2000)
+        },
+        stopScroll(){
+            clearInterval(this.stopInterval)
+
+            this.stopInterval = null
         }
     }
 }).mount('#app')
