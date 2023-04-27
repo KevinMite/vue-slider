@@ -31,6 +31,11 @@ createApp({
         
         }
     },
+
+    created(){
+        this.autoScroll()
+    },
+
     methods:{
         next(){
             console.log('next')
@@ -50,6 +55,11 @@ createApp({
                 this.currentImage = this.slides.length -1
             }
 
+        },
+        autoScroll(){
+            setInterval( () =>{
+                this.next()
+            }, 2000)
         }
     }
 }).mount('#app')
