@@ -67,6 +67,7 @@ createApp({
 
             this.stopInterval = null
         }
+        
     }
 }).mount('#app')
 
